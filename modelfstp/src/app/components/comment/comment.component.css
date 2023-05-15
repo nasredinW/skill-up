@@ -1,0 +1,75 @@
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+
+.textarea-wrapper {
+  position: relative;
+}
+
+.textarea-wrapper button {
+  position: absolute;
+  right: 40px;
+  bottom: 4px;
+}
+
+
+form {
+  display: flex;
+   flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+mat-form-field {
+  width: 90%;
+}
+.comment-value{
+
+  justify-items: end;
+}
+
+textarea {
+  resize: none;
+  width:90%;
+  margin-right: 30px;
+  border-radius: 20px;
+  outline: none;
+  font-size: 12px;
+  padding: 7px;
+
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+button[type="submit"] {
+
+  margin-left: 350px;
+
+}
+
+
+
+mat-divider {
+  width: 100%;
+  display: flex;
+
+}
+
+mat-list {
+  width: 100%;
+}
+
+p {
+ margin-left: 7px;
+  font-size: 16px;
+}
+
+mat-list-item {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-bottom: 0px;
+
+}

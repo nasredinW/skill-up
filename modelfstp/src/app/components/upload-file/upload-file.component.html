@@ -1,0 +1,34 @@
+<div class="file-upload">
+<div mat-dialog-title style="color: yellow">
+  <h1><b> Skill Up Uploader </b></h1>
+</div>
+  <mat-divider></mat-divider>
+<div class="content" mat-dialog-content>
+<input type="file" class="file-input"
+       [accept]="requiredFileType"
+       (change)="onFileSelected($event)" #fileUpload>
+
+<div>
+
+
+
+  <div  *ngIf="uploded"  class="image-content" >
+<img [src]="fileResult" alt="">
+
+  </div>
+  <mat-divider></mat-divider>
+  <button mat-mini-fab class="upload-btn"
+         *ngIf="!uploded" (click)="fileUpload.click()">
+    <mat-icon color="accent">add</mat-icon>
+  </button>
+</div>
+</div>
+  <div   class="action" mat-dialog-actions *ngIf="uploded">
+    <button [mat-dialog-close]="false" color="warn" mat-raised-button type="button">Cancel</button>
+    <button [mat-dialog-close]="fileUrl" color="primary" mat-raised-button type="submit">Add</button>
+  </div>
+
+</div>
+
+
+

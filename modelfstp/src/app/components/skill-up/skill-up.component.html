@@ -1,0 +1,79 @@
+<body id="page-top">
+<!-- Navigation-->
+  <nav class="navbar navbar-expand-lg  navbar-custom fixed-top">
+    <div class="container px-5">
+      <img [src]="logoUrl1" alt="Logo" style="width: 40px; height: 40px;  ">
+      <a class="navbar-brand" href="#page-top" style="color: white">Skill up </a>
+      <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+              data-bs-target="#navbarResponsive" data-bs-toggle="collapse" type="button"><span
+        class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+
+            <button class="about"
+                    href="#scroll"
+                    style="background-color: transparent;border-color: white;color: white; border-width:10em">About us
+            </button>
+
+          </li>
+          <li class="nav-item">
+            <button id="edit-profile-btn" routerLink="login">Sign In</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!-- Header-->
+<header class="masthead text-center text-white">
+  <div class="masthead-content">
+
+  </div>
+  <div class="container px-10">
+    <h2 class="masthead-subheading mb-0" style="color: white;margin-top: 190px; text-align: left">Connect.Organize.<br>
+      Get things Done</h2>
+    <hr>
+
+    <ul>
+
+      <li>
+        <button style="background-color: deepskyblue;border-radius: 10px ;color: white;margin-left: 800px">Create free
+          account
+        </button>
+        <a class="nav-link"></a>
+      </li>
+
+    </ul>
+  </div>
+
+</header>
+<!-- Content section 1-->
+<section id="scroll">
+  <div class="container px-5">
+    <div class="row gx-5 align-items-center">
+      <div class="col-lg-6 order-lg-2">
+        <div class="p-5"><img [src]="logoUrl" alt="..." class="img-fluid rounded-circle"/></div>
+      </div>
+      <div class="col-lg-6 order-lg-1">
+        <div class="p-5">
+          <h2 class="display-4" id="greeting">{{animatedGreeting}}</h2>
+          <p><span style="color: orange">Skill Up</span> <span style="color:blueviolet ">Team Up </span> is an
+            innovative e-learning collaborative platform where experts can come together to teach and learn,
+            simultaneously improving their chances of success. Our platform provides a unique opportunity for
+            individuals to enhance their skills and knowledge through a collaborative approach, with experts in their
+            respective fields. Join us today and take your learning to the next level!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer-->
+<footer class="py-5 bg-black">
+  <div class="container px-5"><p class="m-0 text-center text-white small">Mohamed Mefdeoui Nasredin Wesleti PFE &copy;
+    Skill Up 2023</p></div>
+</footer>
+
+</body>
+

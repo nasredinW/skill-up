@@ -1,0 +1,62 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.col-4 {
+  flex: 0 0 33.33333%;
+  max-width: 33.33333%;
+}
+
+.col-8 {
+  flex: 0 0 66.66667%;
+  max-width: 66.66667%;
+}
+
+.formation-description {
+  margin-bottom: 50px;
+}
+
+.formation-description h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.formation-description p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.video {
+  margin-bottom: 50px;
+}
+
+.video h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.author-info img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.author-details h2 {
+  font-size: 13px}

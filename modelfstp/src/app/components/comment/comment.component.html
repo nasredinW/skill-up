@@ -1,0 +1,29 @@
+<div>
+  <form (ngSubmit)="addComment()" #commentForm="ngForm">
+    <div class="comment-value">
+      <div class="textarea-wrapper">
+        <textarea matInput name="comment" [(ngModel)]="newComment" placeholder="Add a comment"></textarea>
+        <button mat-icon-button type="submit" [disabled]="!commentForm.valid">
+          <mat-icon>send</mat-icon>
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <mat-divider></mat-divider>
+
+  <div class="container">
+    <mat-list>
+      <mat-list-item *ngFor="let comment of comments">
+       <span style="display: flex;align-items: center"> <img alt="Logo" [srcset]="comment.urlphoto"  style="width: 30px;
+        height: 30px; border-radius: 50%;">
+        <p style="margin-left: 3px">{{comment.username| uppercase}}  {{comment.groupName}}</p> </span>
+        <p>{{comment.text}}</p>
+
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+
+
+</div>

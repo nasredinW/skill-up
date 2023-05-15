@@ -1,0 +1,36 @@
+
+
+
+
+
+
+
+
+
+<body>
+
+<div class="container">
+
+  <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+    <div>
+      <h2 style="color: #1a1e21">
+        <fa-icon [icon]="faLock" class="fa-3x"></fa-icon>
+      </h2>
+      <h2>Login</h2>
+    </div>
+
+
+    <label for="username"></label>
+    <input formControlName="username" id="username" name="username" placeholder="username" required type="text">
+
+
+    <label for="password"></label>
+    <input formControlName="password" id="password" maxlength="16" name="password" placeholder="password" required
+           type="password">
+
+    <a href="#"><small>Forgot Password</small></a>
+
+    <button type="submit">Login</button>
+  </form>
+</div>
+</body>

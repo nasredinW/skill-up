@@ -1,0 +1,120 @@
+<mat-toolbar color="primary" >
+
+  <button (click)="drawer.toggle()" aria-label="Example icon button with a menu icon" color="accent" mat-mini-fab>
+    <div class="logo">
+      <img alt="Logo" src="assets/img/SkillsUp (2).png">
+    </div>
+  </button>
+  <span>Skill Up Dashboard</span>
+  <span class="example-spacer" ></span>
+
+
+  <button aria-label="Example icon-button with share icon" class="example-icon" mat-icon-button>
+    <mat-icon (click)="logout()" color="warn">power_settings_new</mat-icon>
+    <mat-icon>share</mat-icon>
+  </button>
+
+</mat-toolbar>
+<mat-drawer-container class="example-container">
+  <mat-drawer #drawer class="sidenav"  mode="side" opened>
+
+    <mat-divider></mat-divider>
+    <button class="menu-button" mat-button>
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
+    </button>
+    <button class="menu-button" mat-button (click)="manageUsers()">
+      <mat-icon>supervisor_account</mat-icon>
+      <span> Manage User</span>
+    </button>
+    <button class="menu-button" mat-button (click)="manageGroup()">
+      <mat-icon>supervised_user_circle</mat-icon>
+      <span>Manage Group</span>
+    </button>
+    <mat-divider></mat-divider>
+
+    <button class="menu-button" mat-button>
+      <mat-icon>help</mat-icon>
+      <span>Help</span>
+    </button>
+
+  </mat-drawer>
+  <mat-drawer-content>
+
+<div class="Main-container" >
+  <app-manage-group *ngIf="managegroup"></app-manage-group>
+  <div *ngIf="manageUser">
+    <button (click)="openAddUserDialog()" mat-button matTooltip="add new user"
+            aria-label="Button that displays a tooltip when focused or hovered over" >
+      <mat-icon>add</mat-icon>
+     New User
+    </button>
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input #input (keyup)="applyFilter($event)" matInput placeholder="Ex. Mia">
+  </mat-form-field>
+
+  <div class="mat-elevation-z8">
+    <table [dataSource]="dataSource" mat-table matSort>
+
+      <!-- ID Column -->
+
+      <ng-container matColumnDef="idUser">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> ID user</th>
+        <td *matCellDef="let row" mat-cell> {{row.idUser}} </td>
+      </ng-container>
+
+
+      <!-- username Column -->
+      <ng-container matColumnDef="username">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> username</th>
+        <td *matCellDef="let row" mat-cell> {{row.username}} </td>
+      </ng-container>
+
+      <!-- profile Column -->
+      <ng-container matColumnDef="profileName">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Profile</th>
+        <td *matCellDef="let row" mat-cell> {{row.profileName}} </td>
+      </ng-container>
+
+      <!-- Group Column -->
+      <ng-container matColumnDef="groupName">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Group</th>
+        <td *matCellDef="let row" mat-cell> {{row.groupName}} </td>
+      </ng-container>
+      <ng-container matColumnDef="statu">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Position</th>
+        <td *matCellDef="let row" mat-cell> {{row.statu}}</td>
+      </ng-container>
+      <ng-container matColumnDef="Action">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Action</th>
+        <td *matCellDef="let row" mat-cell>
+          <button (click)="openEditUserDialog(row)" color="primary" mat-icon-button>
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button (click)="deleteUser(row.id)" color="warn" mat-icon-button>
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button (click)="changeUserPwd(row.id)" color="warn" mat-icon-button>
+            <mat-icon>compare_arrows</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+
+      <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+      <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+
+      <!-- Row shown when there is no matching data. -->
+      <tr *matNoDataRow class="mat-row">
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </div>
+</div>
+</div>
+  </mat-drawer-content>
+
+</mat-drawer-container>

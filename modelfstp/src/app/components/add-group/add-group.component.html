@@ -1,0 +1,31 @@
+<div mat-dialog-title>
+  <h1> Add Group</h1>
+</div>
+<form (ngSubmit)="onGroupFormSubmit()" [formGroup]="GroupForm">
+  <div class="content" mat-dialog-content>
+    <div class="row">
+
+      <mat-form-field appearance="outline">
+        <mat-label>idGroup</mat-label>
+        <input formControlName="idGroup" matInput placeholder="Ex,FI" type="text">
+      </mat-form-field>
+
+
+    </div>
+    <div class="row">
+
+      <mat-form-field appearance="outline">
+        <mat-label>GroupName</mat-label>
+        <input formControlName="groupName" matInput placeholder="Ex,FI" type="text">
+      </mat-form-field>
+
+
+    </div>
+
+
+  </div>
+  <div class="action" mat-dialog-actions>
+        <button [mat-dialog-close]="false" color="warn" mat-raised-button type="button">Cancel</button>
+    <button color="primary" mat-raised-button type="submit">Save Group</button>
+  </div>
+</form>

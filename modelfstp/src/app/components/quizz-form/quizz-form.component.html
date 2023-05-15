@@ -1,0 +1,55 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Create Quiz</mat-card-title>
+  </mat-card-header>
+<form [formGroup]="quizForm"  style="z-index: 33">
+
+
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput placeholder="Question" type="text" formControlName="question">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Option 1" formControlName="option1">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Option 2" formControlName="option2">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Option 3" formControlName="option3">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Option 4" formControlName="option4">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Correct Answer" formControlName="correctAnswer">
+          <mat-option value="option1">Option 1</mat-option>
+          <mat-option value="option2">Option 2</mat-option>
+          <mat-option value="option3">Option 3</mat-option>
+          <mat-option value="option4">Option 4</mat-option>
+
+
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="addQuestion()">
+        Add Question
+        <mat-icon>add</mat-icon>
+      </button>
+      <div *ngFor="let question of questions" style="width: 700px"  >
+        <h3><strong>{{question.question}}?:</strong></h3>
+        <mat-list class="result">
+          <mat-list-item *ngFor="let option of question.options">
+            <mat-checkbox [checked]="option.correct">{{option.value}}</mat-checkbox>
+          </mat-list-item>
+        </mat-list>
+        <mat-divider></mat-divider>
+      </div>
+      <mat-divider></mat-divider>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Submit Quiz</button>
+    </mat-card-actions>
+
+</form>
+</mat-card>
+

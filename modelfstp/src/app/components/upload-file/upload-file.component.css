@@ -1,0 +1,67 @@
+
+.file-input {
+  display: none;
+}
+.progress{
+
+
+}
+.upload-btn {
+  border-radius: 4px;
+  padding: 8px;
+  background-color: #2196F3;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-btn:hover {
+  background-color: #1976D2;
+}
+.file-upload {
+  border: 2px dashed #6f42c1;
+  border-radius: 4px;
+  padding: 16px;
+  cursor: pointer;
+  width: 350px;
+  height: 350px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("src/assets/img/bg-01.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.file-upload:hover {
+  border-color: #2196F3;
+}
+
+
+.image-content{
+  width: 230px;
+  height: 80px;
+
+}
+.image-content img{
+  width: 250px;
+  height: 120px;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+action, button {
+  flex: 1;
+  margin-top: 10px;
+}
+
+.file-upload mat-icon {
+  font-size: 24px;
+}
+
+.progress {
+  margin-top: 16px;
+}
+
+.progress-bar {
+  height: 15px;
+}
+

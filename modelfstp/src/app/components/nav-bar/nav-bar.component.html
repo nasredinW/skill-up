@@ -1,0 +1,97 @@
+
+<div class="nav">
+<mat-toolbar color="primary" style="position: fixed; z-index:33;"  >
+  <button (click)="drawer.toggle()" aria-label="Example icon button with a menu icon" color="accent" mat-mini-fab>
+    <div class="logo">
+      <img alt="Logo" src="assets/img/SkillsUp (2).png">
+    </div>
+
+  </button>
+
+
+
+
+
+  <div class="tab-content">
+    <mat-tab-group color="accent">
+      <mat-tab >
+        <ng-template mat-tab-label >
+          <mat-icon  class="example-tab-icon" >home</mat-icon>
+        </ng-template>
+
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label >
+          <mat-icon class="example-tab-icon" routerLink="/formation" >chrome_reader_mode</mat-icon>
+        </ng-template>
+
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">cast_connected</mat-icon>
+        </ng-template>
+
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+  <mat-icon (click)="logout()" color="warn">power_settings_new</mat-icon>
+  <div class="logoUser">
+    <img alt="Logo" [src]="userPhoto"   >
+  </div>
+
+
+</mat-toolbar>
+
+  <mat-drawer #drawer class="sidenav" mode="over">
+    <div class="image-container">
+      <img alt="user photo" [src]="userPhoto" class="avatar mat-elevation-z8"/>
+      <i class="material-icons edit-icon" (click)="openUploadDialog()">edit</i>
+    </div>
+
+    <h4 class="name">{{username|titlecase}} </h4>
+    <p class="designation">{{statu|uppercase}}</p>
+
+    <mat-divider></mat-divider>
+    <button class="menu-button" mat-button>
+      <mat-icon color="accent">supervised_user_circle</mat-icon>
+      <span>{{GroupName|uppercase}}</span>
+    </button>
+    <button class="menu-button" mat-button>
+      <mat-icon>person</mat-icon>
+      <span>Profile</span>
+
+    </button>
+
+
+    <button class="menu-button" mat-button>
+      <mat-icon>info</mat-icon>
+      <span>About</span>
+    </button>
+    <mat-divider></mat-divider>
+
+
+    <button class="menu-button" mat-button>
+      <p style="color: red">Your validation code</p>
+      <mat-icon color="warn">help</mat-icon>
+      <span>{{idUser|uppercase}}</span>
+    </button>
+      <mat-divider></mat-divider>
+
+
+
+    <div class="expert">
+    <button mat-raised-button color="accent" (click)=" opeAddFormation()">
+       New Session
+    </button>
+    <button mat-raised-button color="accent">
+       New Cour
+    </button>
+    </div>
+
+
+  </mat-drawer>
+
+</div>

@@ -1,0 +1,65 @@
+body {
+  background-color: #F0F2F5;
+}
+
+.app-nav-bar {
+  position: relative;
+  height: 20px;
+}
+
+.main {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F0F2F5;
+
+
+}
+
+.main app-card-form {
+  width: 550px;
+  margin-right: 100px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  justify-content: flex-end;
+  bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.rightSidebar {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: fixed;
+  top: 56%;
+  transform: translateY(-50%);
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.rightSidebar mat-divider {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.demo-inline-calendar-card {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.demo-inline-calendar-card p {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}

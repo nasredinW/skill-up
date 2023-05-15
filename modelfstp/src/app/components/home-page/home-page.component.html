@@ -1,0 +1,27 @@
+
+<body>
+
+<app-nav-bar></app-nav-bar>
+    <div class="main">
+          <app-card-form></app-card-form>
+      <div class="rightSidebar">
+        <h3><strong>Session</strong></h3>
+        <mat-divider></mat-divider>
+        <h3><strong>Groups</strong></h3>
+        <mat-divider></mat-divider>
+        <mat-card class="demo-inline-calendar-card">
+          <mat-calendar [(selected)]="selected" ></mat-calendar >
+        </mat-card>
+        <p>Selected date: {{selected|date}}</p>
+      </div>
+
+    </div>
+
+
+</body>
+
+
+
+
+
+

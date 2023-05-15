@@ -1,0 +1,33 @@
+<div mat-dialog-title>
+  <h1> {{data ? 'Update User' : 'ADD New User'}}</h1>
+</div>
+<form (ngSubmit)="onUserFormSubmit()" [formGroup]="userForm">
+  <div class="content" mat-dialog-content>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input formControlName="username" matInput placeholder="Ex,Nasredin" type="text">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label><b>Group Name</b></mat-label>
+          <mat-select formControlName="groupName">
+          <mat-option *ngFor="let val1 of groupNames" [value]="val1">{{val1}}</mat-option>
+
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="row">
+
+      <mat-form-field appearance="outline">
+        <mat-label><b>Profile</b></mat-label>
+        <mat-select formControlName="profileName">
+          <mat-option *ngFor="let val of profil" [value]="val">{{val}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="action" mat-dialog-actions>
+    <button [mat-dialog-close]="false" color="warn" mat-raised-button type="button">Cancel</button>
+    <button color="primary" mat-raised-button type="submit">{{data ? 'Update' : 'Save'}}</button>
+  </div>
+</form>
